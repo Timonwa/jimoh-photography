@@ -186,7 +186,7 @@ ul {
 .burger-menu {
   display: none;
 }
-main{
+main {
   background-color: var(--main-bgc);
 }
 main > .main-wrapper {
@@ -210,6 +210,22 @@ main > .main-wrapper > .gallery > div > span {
 main > .main-wrapper > .gallery > div > span > img {
   width: auto;
   height: 250px;
+}
+main > .main-wrapper > .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+main > .main-wrapper > .about > .profile-photo > img {
+  height: 400px;
+  width: 300px;
+  object-fit: cover;
+  padding-bottom: 1.5rem;
+}
+main > .main-wrapper > .about > .body  > p{
+  padding-bottom: 0.5rem;
 }
 footer > .footer-wrapper {
   display: flex;
@@ -258,7 +274,7 @@ footer > .footer-wrapper > address > span {
     left: 0;
     background-color: var(--main-bgc);
     width: 100vw;
-    height: calc(100vh - var(--nav-height));
+    height: 50vh;
     text-align: center;
   }
   .nav-wrapper > .burger-menu {
