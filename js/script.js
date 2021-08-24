@@ -12,3 +12,10 @@ menu.addEventListener("click", function () {
     }
 });
 
+const navLinks = document.querySelectorAll(".nav-link");
+for (i of navLinks) {
+    var path = window.location.href;
+        if (i.href === path) {
+            i.classList.add("active");
+        }
+}
