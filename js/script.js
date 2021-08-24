@@ -3,12 +3,12 @@ menu.addEventListener("click", function () {
     if (document.querySelector(".open").style.display === "block") {
         document.querySelector(".open").style.display = "none";
         document.querySelector(".close").style.display = "block";
-        document.querySelector(".burger-link-cntr").style.right = "0px";
+        document.querySelector(".nav-bar").style.zIndex = "1";
     }
     else {
         document.querySelector(".open").style.display = "block";
         document.querySelector(".close").style.display = "none";
-        document.querySelector(".burger-link-cntr").style.right = "-100px";
+        document.querySelector(".nav-bar").style.zIndex = "-10";
     }
 });
 
