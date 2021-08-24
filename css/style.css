@@ -1,0 +1,282 @@
+/*? ==========  */
+/*? beginning of basic css styles */
+/*? ========== */
+/** offline font links */
+@font-face {
+  font-family: "name";
+  src: url("");
+}
+/*! root file */
+:root {
+  /** variables */
+  /* main color variables */
+  --main-bgc: ;
+  --main-bgc2: ;
+  --main-color: #443f3f;
+  --main-color2: ;
+  --white: #fff;
+  --black: #000;
+
+  /* dimensions */
+  --nav-height: 80px;
+  --section-div-margin: 20px 50px;
+  --section-div-padding: 20px;
+}
+/** all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/** large screen=1024px (960px-1024px) */
+/* body */
+body {
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: normal;
+  background-color: var(--main-bgc);
+  color: var(--main-color);
+  overflow-x: hidden;
+}
+/* text elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-height: 150%;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 0.8rem;
+}
+h2 {
+  margin-bottom: 0.75rem;
+}
+h3 {
+  margin-bottom: 0.6rem;
+}
+h4 {
+  margin-bottom: 0.5rem;
+}
+h5 {
+  margin-bottom: 0.4rem;
+}
+h6 {
+  margin-bottom: 0.3rem;
+}
+/** to ensure that when you click on an id link, the header will not cover the beginning of the content the id is pointing to */
+[id] {
+  scroll-margin-top: 5em;
+}
+/** resetting the link states to the page's main color and no decoration */
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: var(--main-color);
+}
+/** removing the outline when inputs are on focus */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+/** button */
+button {
+  cursor: pointer;
+}
+/** list */
+ul {
+  list-style: none;
+  list-style-position: unset;
+}
+/*! ===== LARGE SCREEN FIRST RWD ===== */
+/*! the ffg queries determine the font size and line height and any other basic styles of the elements in the file */
+/*! the main media queries are located at the end of this file this is just the default media query styles */
+/** extra-large=1440px+ */
+@media screen and (max-width: 1440px) {
+  /* body */
+  body {
+    font-size: 19px;
+  }
+}
+/** medium=608px (608px-960px) */
+@media screen and (max-width: 960px) {
+  /* body */
+  body {
+    font-size: 17px;
+  }
+  /* text elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    line-height: 140%;
+  }
+}
+/** small=400px (400px-608px) */
+@media screen and (max-width: 608px) {
+  /* body */
+  body {
+    font-size: 16px;
+  }
+  /* text elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    line-height: 130%;
+  }
+}
+/** small=400px (400px and below) */
+@media screen and (max-width: 400px) {
+  /* body */
+  body {
+    font-size: 16px;
+  }
+  /* text elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    line-height: 130%;
+  }
+}
+/*? ==========  */
+/*? end of basic css styles */
+/*? ========== */
+/** nav bar */
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding: 20px 50px;
+  position: relative;
+}
+/* logo */
+.nav-wrapper > .logo {
+  font-weight: 700;
+}
+/* nav bar */
+.nav-wrapper > .nav-bar {
+  /* font-weight: 500; */
+  text-align: right;
+}
+/* nav bar links */
+.nav-wrapper > .nav-bar > ul > li {
+  display: inline;
+  margin: 0 20px;
+}
+.burger-menu {
+  display: none;
+}
+main > .main-wrapper {
+  margin: var(--section-div-margin);
+  padding: var(--section-div-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main > .main-wrapper > .gallery > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+main > .main-wrapper > .gallery > div > span {
+  margin: 10px;
+}
+main > .main-wrapper > .gallery > div > span > img {
+  width: auto;
+  height: 250px;
+}
+footer > .footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 20px 50px;
+}
+footer > .footer-wrapper > address > span {
+  margin: 0 20px;
+}
+/** media query */
+/* medium=608px (608px-960px) */
+@media screen and (max-width: 960px) {
+  :root {
+    --section-div-margin: 20px 20px;
+    --section-div-padding: 20px 10px;
+  }
+  main > .main-wrapper > .gallery > div > span > img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+/*! burger menu */
+/* medium=768px */
+@media screen and (max-width: 768px) {
+  /* nav bar */
+  .nav-wrapper > .nav-bar {
+    display: none;
+  }
+  .nav-wrapper > .burger-menu {
+    display: block;
+  }
+  .nav-wrapper > .burger-menu > .burger-menu-toggle > span > .close {
+    display: none;
+  }
+  .nav-wrapper > .burger-menu > .burger-link-cntr{
+    position: absolute;
+    top: var(--nav-height);
+    right: -100px;
+    width: 100px;
+    text-align: center;
+    transition: right 300ms;
+    -webkit-transition: right 300ms;
+    -moz-transition: right 300ms;
+    -ms-transition: right 300ms;
+    -o-transition: right 300ms;
+}
+  .nav-wrapper > .burger-menu > .burger-link-cntr > li{
+    padding: 10px;
+  }
+  .nav-wrapper > .burger-menu > .burger-link-cntr > li > a:active {
+    font-weight: bold;
+  }
+}
+/* small=600px (500px and below) */
+@media screen and (max-width: 620px) {
+  :root {
+    --section-div-margin: 20px 20px;
+    --section-div-padding: 20px 10px;
+  }
+  main > .main-wrapper > .gallery > div > span > img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+  }
+}
+.active{
+  font-weight: 700;
+}
