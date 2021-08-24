@@ -224,8 +224,23 @@ main > .main-wrapper > .about > .profile-photo > img {
   object-fit: cover;
   padding-bottom: 1.5rem;
 }
+main > .main-wrapper > .about > .body *{
+  text-align: left;
+}
 main > .main-wrapper > .about > .body  > p{
   padding-bottom: 0.5rem;
+}
+main > .main-wrapper > .about > button{
+  margin: 20px;
+  padding:10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: transparent;
+  font-weight: 600;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 footer > .footer-wrapper {
   display: flex;
