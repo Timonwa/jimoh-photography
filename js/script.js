@@ -8,7 +8,7 @@ menu.addEventListener("click", function () {
     else {
         document.querySelector(".open").style.display = "block";
         document.querySelector(".close").style.display = "none";
-        document.querySelector(".nav-bar").style.zIndex = "-10";
+        document.querySelector(".nav-bar").style.zIndex = "-1";
     }
 });
 

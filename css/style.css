@@ -10,7 +10,7 @@
 :root {
   /** variables */
   /* main color variables */
-  --main-bgc: ;
+  --main-bgc: white;
   --main-bgc2: ;
   --main-color: #443f3f;
   --main-color2: ;
@@ -186,6 +186,9 @@ ul {
 .burger-menu {
   display: none;
 }
+main{
+  background-color: var(--main-bgc);
+}
 main > .main-wrapper {
   margin: var(--section-div-margin);
   padding: var(--section-div-padding);
@@ -232,16 +235,28 @@ footer > .footer-wrapper > address > span {
     object-fit: cover;
   }
 }
+/* small=600px (500px and below) */
+@media screen and (max-width: 620px) {
+  :root {
+    --section-div-margin: 20px 20px;
+    --section-div-padding: 20px 10px;
+  }
+  main > .main-wrapper > .gallery > div > span > img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+  }
+}
 /*! burger menu */
 /* medium=768px */
 @media screen and (max-width: 768px) {
   /* nav bar */
   .nav-wrapper > .nav-bar {
-    z-index: -10;
+    z-index: -1;
     position: absolute;
     top: var(--nav-height);
     left: 0;
-    background-color: var(--white);
+    background-color: var(--main-bgc);
     width: 100vw;
     height: calc(100vh - var(--nav-height));
     text-align: center;
@@ -261,18 +276,6 @@ footer > .footer-wrapper > address > span {
   }
   .nav-wrapper > .nav-bar > ul > li > a:active {
     font-weight: bold;
-  }
-}
-/* small=600px (500px and below) */
-@media screen and (max-width: 620px) {
-  :root {
-    --section-div-margin: 20px 20px;
-    --section-div-padding: 20px 10px;
-  }
-  main > .main-wrapper > .gallery > div > span > img {
-    width: 300px;
-    height: auto;
-    object-fit: cover;
   }
 }
 .active {
