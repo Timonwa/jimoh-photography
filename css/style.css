@@ -243,6 +243,7 @@ main > .main-wrapper > .about > button{
   -o-border-radius: 5px;
 }
 footer > .footer-wrapper {
+  background-color: var(--main-bgc);
   display: flex;
   flex-direction: column;
   justify-content: center;
