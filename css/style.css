@@ -379,7 +379,7 @@ main
   font-size: 1.2rem;
   background-color: transparent;
   display: block;
-  width: 100%;
+  width: 500px;
   border: solid 1px #ddd;
   padding: 10px;
   border-radius: 0.25rem;
@@ -461,6 +461,12 @@ footer > .footer-wrapper > address > span {
     height: inherit;
     flex-direction: column;
     justify-content: space-evenly;
+  }
+}
+/* medium=768px */
+@media screen and (max-width: 500px) {
+  .fcf-btn {
+    width: 100%;
   }
 }
 
