@@ -1,4 +1,4 @@
-/*? ==========  */
+dles /*? ==========  */
 /*? beginning of basic css styles */
 /*? ========== */
 /** offline font links */
@@ -168,8 +168,13 @@ ul {
   position: relative;
 }
 /* logo */
-.nav-wrapper > .logo {
+.nav-wrapper > .logo,.nav-wrapper > .nav-bar > ul,.nav-wrapper > .burger-menu {
+  border: 3px solid #000;
+}
+.nav-wrapper > .logo 
+>p{
   font-weight: 700;
+  margin-bottom: 0;
 }
 /* nav bar */
 .nav-wrapper > .nav-bar {
