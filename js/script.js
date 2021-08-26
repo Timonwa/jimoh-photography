@@ -1,4 +1,7 @@
+// * burger menu toggle
+// burger menu div
 const menu = document.querySelector(".burger-menu");
+// add event listener to toggle burger menu
 menu.addEventListener("click", function () {
     if (document.querySelector(".open").style.display === "block") {
         document.querySelector(".open").style.display = "none";
@@ -12,10 +15,12 @@ menu.addEventListener("click", function () {
     }
 });
 
+//* adding active state to current webpage viewed by the user
+// if current file path of webpage in view is same as the file path of the nav link that was clicked, then that nav link should have a class of .active
 const navLinks = document.querySelectorAll(".nav-link");
 for (i of navLinks) {
     var path = window.location.href;
-        if (i.href === path) {
-            i.classList.add("active");
-        }
+    if (i.href === path) {
+        i.classList.add("active");
+    }
 }
