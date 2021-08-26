@@ -1,4 +1,4 @@
-dles /*? ==========  */
+/*? ==========  */
 /*? beginning of basic css styles */
 /*? ========== */
 /** offline font links */
@@ -15,7 +15,7 @@ dles /*? ==========  */
 
   /* dimensions */
   --nav-height: 80px;
-  --section-div-margin: 20px 50px;
+  --section-div-margin: 0px 50px;
   --section-div-padding: 20px;
 }
 /** all elements */
@@ -168,25 +168,25 @@ ul {
   position: relative;
 }
 /* logo */
-.nav-wrapper > .logo,.nav-wrapper > .nav-bar > ul,.nav-wrapper > .burger-menu {
-  border: 3px solid #000;
-}
-.nav-wrapper > .logo 
->p{
+.nav-wrapper > .logo > p {
   font-weight: 700;
   margin-bottom: 0;
 }
 /* nav bar */
 .nav-wrapper > .nav-bar {
   text-align: right;
+  z-index: 1;
 }
 /* nav bar links */
+.nav-wrapper > .nav-bar > ul {
+  display: flex;
+  flex-direction: row;
+}
 .nav-wrapper > .nav-bar > ul > li {
-  display: inline;
   margin: 0 20px;
 }
 /* burger menu */
-.burger-menu {
+.nav-wrapper > .burger-menu {
   display: none;
 }
 /** main section */
@@ -459,12 +459,8 @@ footer > .footer-wrapper > address > span {
   /* nav bar links */
   .nav-wrapper > .nav-bar > ul {
     height: inherit;
-    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-  }
-  .nav-wrapper > .nav-bar > ul > li > a:active {
-    font-weight: bold;
   }
 }
 
