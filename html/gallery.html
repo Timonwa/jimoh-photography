@@ -46,7 +46,13 @@
             <ul class="nav-link-cntr">
               <!-- nav links -->
               <li><a class="nav-link" href="/index.html">Home</a></li>
-              <li><a class="nav-link" href="/html/gallery.html">Gallery</a></li>
+              <li>
+                <a class="nav-link" href="/html/gallery.html">Gallery</a>
+                <ul class="sub-link">
+                  <li>Album 1</li>
+                  <li>Album 2</li>
+                </ul>
+              </li>
               <li><a class="nav-link" href="/html/about.html">About</a></li>
               <li><a class="nav-link" href="/html/contact.html">Contact</a></li>
             </ul>
@@ -71,15 +77,11 @@
         <div class="main-wrapper">
           <!-- gallery section -->
           <section class="gallery">
-            <h3 class="ablum-name">Album 1</h3>
+            <h3 class="album-name">Album 1</h3>
             <!-- album 1 -->
-            <div class="ablum1">
-              <span><img src="/img/album1/photo1.jpg" alt="photo1"></span>
-            </div>
+            <div class="album1" style="display: none"></div>
             <!-- album 2 -->
-            <div class="ablum2" style="display: none;">
-              <span><img src="/img/album2/photo1.jpg" alt="photo1"></span>
-            </div>
+            <div class="album2"></div>
           </section>
         </div>
       </main>
@@ -106,7 +108,7 @@
 
     <!--* My Javascript code link -->
     <!-- main Javascript code -->
-    <script type="module" src="/js/script.js"></script>
-    <script src="/js/gallery-photo.js"></script>
+    <script src="/js/script.js"></script>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>

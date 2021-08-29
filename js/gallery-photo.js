@@ -1,8 +1,10 @@
+// exporting these data to script.js to use in creating the albums
+
 // ! album link names that will be visible on the menu as dropdown for gallery link
-const albumLinks = ['Album 1', 'Album 2'];
+export const albumLinks = ['Album 1', 'Album 2'];
 
 // ! Images for album 1
-const album1Images = [
+export const album1Images = [
     { albumName: "Album 1" },
     "/img/album1/photo1.jpg",
     "/img/album1/photo2.jpg",
@@ -19,7 +21,7 @@ const album1Images = [
 ];
 
 // ! Images for album 2
-const album2Images = [
+export const album2Images = [
     { albumName: "Album 2" },
     "/img/album2/photo1.jpg",
     "/img/album2/photo2.jpg",
@@ -34,3 +36,5 @@ const album2Images = [
     "/img/album2/photo3.jpg",
     "/img/album2/photo4.jpg"
 ];
+
+// console.log(albumLinks);
