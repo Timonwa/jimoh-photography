@@ -185,6 +185,21 @@ ul {
 .nav-wrapper > .nav-bar > ul > li {
   margin: 0 20px;
 }
+.nav-wrapper > .nav-bar > ul > li > i {
+  font-size: 0.8em;
+  margin-left: 10px;
+}
+.nav-wrapper > .nav-bar > ul > li > i.arrowclose {
+  display: none;
+}
+.nav-wrapper > .nav-bar > ul > li> .sub-links {
+  margin-top: 5px;
+  width: 100%;
+  display: none;
+}
+.nav-wrapper > .nav-bar > ul > li> .sub-link > li{
+  padding: 2px 0px;
+}
 /* burger menu */
 .nav-wrapper > .burger-menu {
   display: none;
@@ -441,7 +456,7 @@ footer > .footer-wrapper > address > span {
 @media screen and (max-width: 768px) {
   /* nav bar */
   .nav-wrapper > .nav-bar {
-    z-index: -1;
+    z-index: 1;
     position: absolute;
     top: var(--nav-height);
     left: 0;
