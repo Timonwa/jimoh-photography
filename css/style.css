@@ -185,6 +185,24 @@ ul {
 .nav-wrapper > .nav-bar > ul > li {
   margin: 0 20px;
 }
+.nav-wrapper > .nav-bar > ul > li > i {
+  font-size: 0.8em;
+  margin-left: 2px;
+}
+.nav-wrapper > .nav-bar > ul > li > .arrowopen {
+  display: inline-block;
+}
+.nav-wrapper > .nav-bar > ul > li > .arrowclose {
+  display: none;
+}
+.nav-wrapper > .nav-bar > ul > li > .sub-links {
+  width: 100%;
+  display: none;
+  margin-top: 5px;
+}
+.nav-wrapper > .nav-bar > ul > li > .sub-links > li {
+  padding: 2px 0px;
+}
 /* burger menu */
 .nav-wrapper > .burger-menu {
   display: none;
