@@ -24,3 +24,37 @@ for (i of navLinks) {
         i.classList.add("active");
     }
 }
+
+//* gallery dropdown
+// gallery dropdown on click
+document.querySelector('.gallery-dropdown').addEventListener("click", function () {
+    if (document.querySelector('.arrowopen').style.display === "inline-block") {
+        document.querySelector('.arrowopen').style.display = "none";
+        document.querySelector('.arrowclose').style.display = "inline-block";
+        document.querySelector('.sub-links').style.display = "block";
+    }
+    else {
+        document.querySelector('.arrowopen').style.display = "inline-block";
+        document.querySelector('.arrowclose').style.display = "none";
+        document.querySelector('.sub-links').style.display = "none";
+    }
+});
+
+//* gallery sublink on click
+// adding event listener to the accordion toggle button
+for (i of btnToggle) {
+    i.addEventListener('click', toggleFunction);
+}
+// ! here the other bodies automatically close then the current one is open
+function toggleFunction() {
+    for (i of btnToggle) {
+        i.nextElementSibling.style.display = "none";
+        i.children[0].style.display = "inline-block";
+        i.children[1].style.display = "none";
+    };
+    if (this.nextElementSibling.style.display == "none") {
+        this.nextElementSibling.style.display = "block";
+        this.children[0].style.display = "none";
+        this.children[1].style.display = "inline-block";
+    };
+};
