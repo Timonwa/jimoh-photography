@@ -158,6 +158,9 @@ ul {
 /*? ==========  */
 /*? end of basic css styles */
 /*? ========== */
+.nav-space{
+  height: var(--nav-height);
+}
 /** nav bar */
 /* nav bar wrapper */
 .nav-wrapper {
@@ -326,6 +329,10 @@ main > .main-wrapper {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+section{
+  margin: var(--section-div-margin);
+
 }
 /** gallery */
 #gallery > .gallery-wrapper {
@@ -598,7 +605,7 @@ footer > .footer-wrapper > address > span {
 @media screen and (max-width: 960px) {
   /*! root file */
   :root {
-    --section-div-margin: 20px 20px;
+    --section-div-margin: 0px 20px;
     --section-div-padding: 20px 10px;
   }
   /* album individual image */
@@ -611,11 +618,6 @@ footer > .footer-wrapper > address > span {
 }
 /* small=600px (500px and below) */
 @media screen and (max-width: 620px) {
-  /*! root file */
-  :root {
-    --section-div-margin: 20px 20px;
-    --section-div-padding: 20px 10px;
-  }
   /* album individual image */
   #gallery > .gallery-wrapper > .gallery-album > span > img {
     width: 300px;
