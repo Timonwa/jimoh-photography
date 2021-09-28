@@ -1,60 +1,67 @@
+// * function to close the dropdown menu on smaller screens
+function navLinkCloseMenu() {
+    document.querySelector(".open").style.display = "block";
+    document.querySelector(".close").style.display = "none";
+    document.querySelector(".nav-links").style.top = "-50vh";
+    document.querySelector(".dropdown-open").style.display = "inline-block";
+    document.querySelector(".dropdown-close").style.display = "none";
+    document.querySelector(".dropdown-links").style.display = "none";
+}
+
+// * function to open the dropdown menu on smaller screens
+function navLinkOpenMenu() {
+    document.querySelector(".open").style.display = "none";
+    document.querySelector(".close").style.display = "block";
+    document.querySelector(".nav-links").style.top = "var(--nav-height)";
+}
+
+
 // * burger menu toggle
-// burger menu div
+// select burger menu
 const menu = document.querySelector(".burger-menu");
 // add event listener to toggle burger menu
 menu.addEventListener("click", function () {
-    if (document.querySelector(".open").style.display === "block") {
-        document.querySelector(".open").style.display = "none";
-        document.querySelector(".close").style.display = "block";
-        document.querySelector(".nav-bar").style.zIndex = "1";
+    if (document.querySelector(".open").style.display === "none") {
+        navLinkCloseMenu()
     }
     else {
-        document.querySelector(".open").style.display = "block";
-        document.querySelector(".close").style.display = "none";
-        document.querySelector(".nav-bar").style.zIndex = "-1";
+        navLinkOpenMenu()
     }
 });
 
-//* adding active state to current webpage viewed by the user
-// if current file path of webpage in view is same as the file path of the nav link that was clicked, then that nav link should have a class of .active
+// * individual nav links
+// todo function 1
+// adding active state to current webpage viewed by the user.
+// if current file path of webpage in view is same as the file path of the nav link that was clicked, then that nav link should have a class of .active.
+// todo function 2
+// when you click on any of the links, the dropdown menu should close
+
 const navLinks = document.querySelectorAll(".nav-link");
-for (i of navLinks) {
+for (let link of navLinks) {
+    // function 1
     var path = window.location.href;
-    if (i.href === path) {
-        i.classList.add("active");
-    }
+    if (link.href === path) {
+        link.classList.add("active");
+    };
+
+    // function 2
+    link.addEventListener("click", navLinkCloseMenu);
 }
 
-//* gallery dropdown
-// gallery dropdown on click
-document.querySelector('.gallery-dropdown').addEventListener("click", function () {
-    if (document.querySelector('.arrowopen').style.display === "inline-block") {
-        document.querySelector('.arrowopen').style.display = "none";
-        document.querySelector('.arrowclose').style.display = "inline-block";
-        document.querySelector('.sub-links').style.display = "block";
+
+// * dropdown menu toggle
+// select dropdown menu
+const dropdownMenu = document.querySelector(".dropdown-menu");
+// add event listener to toggle dropdown menu
+dropdownMenu.addEventListener("click", function () {
+    if (document.querySelector(".dropdown-open").style.display == "none") {
+        document.querySelector(".dropdown-open").style.display = "inline-block";
+        document.querySelector(".dropdown-close").style.display = "none";
+        document.querySelector(".dropdown-links").style.display = "none";
     }
     else {
-        document.querySelector('.arrowopen').style.display = "inline-block";
-        document.querySelector('.arrowclose').style.display = "none";
-        document.querySelector('.sub-links').style.display = "none";
+        document.querySelector(".dropdown-open").style.display = "none";
+        document.querySelector(".dropdown-close").style.display = "inline-block";
+        document.querySelector(".dropdown-links").style.display = "block";
     }
 });
-
-//* gallery sublink on click
-// adding event listener to the accordion toggle button
-for (i of btnToggle) {
-    i.addEventListener('click', toggleFunction);
-}
-// ! here the other bodies automatically close then the current one is open
-function toggleFunction() {
-    for (i of btnToggle) {
-        i.nextElementSibling.style.display = "none";
-        i.children[0].style.display = "inline-block";
-        i.children[1].style.display = "none";
-    };
-    if (this.nextElementSibling.style.display == "none") {
-        this.nextElementSibling.style.display = "block";
-        this.children[0].style.display = "none";
-        this.children[1].style.display = "inline-block";
-    };
-};
