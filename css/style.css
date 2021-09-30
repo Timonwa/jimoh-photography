@@ -6,12 +6,14 @@
   font-family: "name";
   src: url("");
 }
+
 /*! root file */
 :root {
   /** variables */
   /* main color variables */
   --main-bgc: white;
   --main-color: #443f3f;
+  --main-color2: #c2bdbd;
   --nav-border-color: #aaa0a0;
 
   /* dimensions */
@@ -19,12 +21,17 @@
   --section-div-margin: 0px 50px;
   --section-div-padding: 20px;
 }
+
 /** all elements */
-* {
+*,
+::before,
+*::after {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 /** large screen=1024px (960px-1024px) */
 /* body */
 body {
@@ -65,10 +72,12 @@ h5 {
 h6 {
   margin-bottom: 0.3rem;
 }
+
 /** to ensure that when you click on an id link, the header will not cover the beginning of the content the id is pointing to */
 [id] {
   scroll-margin-top: 5em;
 }
+
 /** resetting the link states to the page's main color and no decoration */
 a,
 a:link,
@@ -78,6 +87,7 @@ a:visited {
   text-decoration: none;
   color: var(--main-color);
 }
+
 /** removing the outline when inputs are on focus */
 input:focus,
 select:focus,
@@ -85,15 +95,32 @@ textarea:focus,
 button:focus {
   outline: none;
 }
+
+/** input */
+input,
+textarea {
+  cursor: pointer;
+  color: var(--main-color);
+}
+
 /** button */
 button {
   cursor: pointer;
+  color: var(--main-color);
+  font-size: 1rem;
+  background-color: transparent;
 }
+
 /** list */
 ul {
   list-style: none;
   list-style-position: unset;
 }
+/** address */
+address {
+  font-style: normal;
+}
+
 /*! ===== LARGE SCREEN FIRST RWD ===== */
 /*! the ffg queries determine the font size and line height and any other basic styles of the elements in the file */
 /*! the main media queries are located at the end of this file this is just the default media query styles */
@@ -104,6 +131,7 @@ ul {
     font-size: 19px;
   }
 }
+
 /** medium=608px (608px-960px) */
 @media screen and (max-width: 960px) {
   /* body */
@@ -121,6 +149,7 @@ ul {
     line-height: 140%;
   }
 }
+
 /** small=400px (400px-608px) */
 @media screen and (max-width: 608px) {
   /* body */
@@ -138,6 +167,7 @@ ul {
     line-height: 130%;
   }
 }
+
 /** small=400px (400px and below) */
 @media screen and (max-width: 400px) {
   /* body */
@@ -158,9 +188,11 @@ ul {
 /*? ==========  */
 /*? end of basic css styles */
 /*? ========== */
-.nav-space{
+
+.nav-space {
   height: var(--nav-height);
 }
+
 /** nav bar */
 /* nav bar wrapper */
 .nav-wrapper {
@@ -317,23 +349,35 @@ ul {
 .active {
   font-weight: 700;
 }
+
 /** main section */
 main {
   background-color: var(--main-bgc);
 }
+
 /* main section wrapper */
 main > .main-wrapper {
   margin: var(--section-div-margin);
   padding: var(--section-div-padding);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
-section{
-  margin: var(--section-div-margin);
 
+section {
+  margin: var(--section-div-margin);
 }
+
 /** gallery */
 #gallery > .gallery-wrapper {
   position: relative;
@@ -417,180 +461,174 @@ section{
 
 /** about section */
 main > .main-wrapper > .about {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: 10px;
 }
+
 /* about user photo */
 main > .main-wrapper > .about > .profile-photo > img {
   height: 400px;
   width: 300px;
+  -o-object-fit: cover;
   object-fit: cover;
   padding-bottom: 1.5rem;
 }
+
 /* about user description ifo */
 main > .main-wrapper > .about > .body * {
   text-align: left;
 }
+
 main > .main-wrapper > .about > .body > p {
   padding-bottom: 0.5rem;
 }
+
 /* about contact me button */
 main > .main-wrapper > .about > button {
   margin: 20px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
-  background-color: transparent;
   font-weight: 600;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+
 /** contact section */
 main > .main-wrapper > .contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: 10px;
 }
-/* contact section container */
-main > .main-wrapper > .contact-form > div {
+
+/** contact form */
+/* contact form */
+.contact-wrapper,
+.contact-form,
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
-/* contact header description */
-main > .main-wrapper > .contact-form > div > p {
-  text-align: left;
-  padding-bottom: 0.5rem;
+.contact-wrapper {
+  padding: var(--section-div-margin);
 }
-/* contact form */
-main > .main-wrapper > .contact-form > div > .form-section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
+.contact-form {
+  margin: 20px 0;
 }
-/* contact form groupings */
-main > .main-wrapper > .contact-form > div > .form-section > form {
+form {
+  padding: 0 20px;
+}
+
+/* contact form groups */
+.contact-wrapper > .contact-form > form > .form-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
-  width: 100%;
+  margin: 5px;
+  width: 300px;
 }
-/* form input and label container */
-main
-  > .main-wrapper
+
+/* contact form group label */
+.contact-wrapper
   > .contact-form
-  > div
-  > .form-section
   > form
-  > .fcf-form-group {
+  > .form-input-group
+  > .form-input-label {
+  margin-bottom: 10px;
+}
+
+/* contact form group input */
+.contact-wrapper > .contact-form > form > .form-input-group > .form-input {
+  margin-bottom: 10px;
   padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
-/* label */
-main
-  > .main-wrapper
-  > .contact-form
-  > div
-  > .form-section
-  > form
-  > .fcf-form-group
-  > label {
-  font-weight: 600;
-}
-/* input div */
-main
-  > .main-wrapper
-  > .contact-form
-  > div
-  > .form-section
-  > form
-  > .fcf-form-group
-  > .fcf-input-group {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-}
+
 /* input */
-main
-  > .main-wrapper
+.contact-wrapper
   > .contact-form
-  > div
-  > .form-section
   > form
-  > .fcf-form-group
-  > .fcf-input-group
-  > .fcf-form-control {
-  font-size: 0.8rem;
-  display: block;
-  width: 100%;
-  height: calc(1.5em + 0.75rem + 2px);
-  margin-top: 5px;
-  padding: 5px 10px;
-  border: solid 1px #ddd;
-  outline: none;
-  color: var(--main-color);
-  border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out;
-  -webkit-transition: border-color 0.15s ease-in-out;
-  -moz-transition: border-color 0.15s ease-in-out;
-  -ms-transition: border-color 0.15s ease-in-out;
-  -o-transition: border-color 0.15s ease-in-out;
+  > .form-input-group
+  > .form-input:focus {
+  border-color: var(--main-color2);
 }
-/* input focus */
-main
-  > .main-wrapper
+
+/* contact form group input */
+.contact-wrapper
   > .contact-form
-  > div
-  > .form-section
   > form
-  > .fcf-form-group
-  > .fcf-input-group
-  > .fcf-form-control:focus {
-  border: 1px solid #eee;
-}
-/* textarea */
-main
-  > .main-wrapper
-  > .contact-form
-  > div
-  > .form-section
-  > form
-  > .fcf-form-group
-  > .fcf-input-group
-  > textarea.fcf-form-control {
-  height: auto;
-}
-/* submit button */
-.fcf-btn {
+  > .form-input-group
+  > button.form-input {
+  margin: 20px 0;
   font-weight: 600;
-  font-size: 1.2rem;
-  background-color: transparent;
-  display: block;
-  width: 500px;
-  border: solid 1px #ddd;
-  padding: 10px;
-  border-radius: 0.25rem;
-  transition: box-shadow 0.15s ease-in-out;
-  -webkit-transition: box-shadow 0.15s ease-in-out;
-  -moz-transition: box-shadow 0.15s ease-in-out;
-  -ms-transition: box-shadow 0.15s ease-in-out;
-  -o-transition: box-shadow 0.15s ease-in-out;
 }
+
+/* button */
+button:active {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
 /** footer */
 footer > .footer-wrapper {
   background-color: var(--main-bgc);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 100px;
   padding: 20px 50px;
@@ -617,6 +655,7 @@ footer > .footer-wrapper > address > span {
     object-fit: cover;
   }
 }
+
 /* small=600px (500px and below) */
 @media screen and (max-width: 620px) {
   /* album individual image */

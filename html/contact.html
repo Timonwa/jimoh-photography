@@ -74,91 +74,119 @@
       <main>
         <div class="main-wrapper">
           <!-- contact section -->
-          <section class="contact-form">
-            <div id="fcf-form">
-              <!-- header -->
-              <h2 class="fcf-h3">Say Hi!</h3>
-              <!-- intro text -->
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda hic, laboriosam consectetur quidem, itaque
-                consequuntur temporibus atque sed a veritatis provident sapiente
-                quo.
-              </p>
-              <!-- contact form -->
-              <div class="form-section">
+          <section id="contact">
+            <div class="contact-wrapper">
+              <!-- contact intro -->
+              <h2>Say Hi!</h2>
+              <p
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+                animi saepe! Similique voluptatibus velit porro molestiae
+                incidunt animi enim atque.</p
+              >
+              <!--* contact form cntr -->
+              <div class="contact-form">
+                <!-- ! Pointing the action-attribute of your form to our URL will enable submissions to be sent to your email address. -->
+                <!-- ! THIS FORM IS POWERED BY https://formsubmit.co API. -->
                 <form
-                  id="fcf-form-id"
-                  class="fcf-form-class"
+                  action="https://formsubmit.co/your@email.com-or- your-random-string"
                   method="POST"
-                  action=""
                 >
-                  <!--! form submit data beginning -->
-                  <input
-                    type="hidden"
-                    name="_next"
-                    value="https://photography-portfolio-kohl.vercel.app/thank-you.html"
-                  />
-                  <input
-                    type="hidden"
-                    name="_subject"
-                    value="Enquiry from Photographer Jimoh's website"
-                  />
-                  <input type="hidden" name="_captcha" value="false" />
-                  <!--! form submit data beginning -->
+                  <!-- * hidden form inputs needed by formsubmit.co to perform other form functions. -->
+                  <div>
+                    <!-- ! _next -->
+                    <!-- ? By default, after submitting a form the user is shown the FormSubmit "Thank You" page. You can provide an alternative URL for "Thank You" page. -->
+                    <input
+                      type="hidden"
+                      name="_next"
+                      value="https://yourdomain.co/thanks.html"
+                    />
 
-                  <!-- form inputs- -->
-                  <div class="fcf-form-group">
-                    <label for="name" class="fcf-label">Your name</label>
-                    <div class="fcf-input-group">
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        class="fcf-form-control"
-                        required
-                      />
-                    </div>
+                    <!-- ! _subject -->
+                    <!-- ? This value is used for the email's subject, so that you can quickly reply to submissions without having to edit the subject line each time. -->
+                    <input
+                      type="hidden"
+                      name="_subject"
+                      value="New submission!"
+                    />
+
+                    <!-- ! _cc -->
+                    <!-- ? This value is used for the email's CC Field. This lets you send a copy of each submission to another email address. -->
+                    <!-- ? If you want to CC multiple email addresses, then just make it a list of email addresses separate by commas. -->
+                    <input
+                      type="hidden"
+                      name="_cc"
+                      value="another@email.com,yetanother@email.com"
+                    />
+
+                    <!-- ! _honeypot -->
+                    <!-- ? Add this "honeypot" field to avoid spam by fooling scrapers. If a value is provided, the submission will be silently ignored. The input should be hidden with CSS. All forms come with reCAPTCHA, which uses advanced machine learning techniques to distinguish between humans and bots, so for most forms this isn't necessary. -->
+                    <input type="text" name="_honey" style="display: none" />
+
+                    <!-- ! _captcha -->
+                    <!-- ? Don't want your users to complete a reCAPTCHA? Each form now comes with the option to disable the reCAPTCHA, so you can maintain complete control over your form. You can even keep reCAPTCHA on a few forms that might be suceptible to spam, while disabling it on others. -->
+                    <input type="hidden" name="_captcha" value="false" />
+
+                    <!-- ! _autoresponse -->
+                    <!-- ? You can send an instant response to your users with a copy of the submission. Add a custom message to the email body. To activate this feature your form should request the user's email address. Note autoresponse won't work with forms that are disabled reCAPTCHA and forms that are submitting through AJAX. -->
+                    <input
+                      type="hidden"
+                      name="_autoresponse"
+                      value="your custom message"
+                    />
                   </div>
 
-                  <div class="fcf-form-group">
-                    <label for="email" class="fcf-label"
+                  <!-- * form inputs visible to the user needed by formsubmit.co to perform other form functions. -->
+                  <!-- ? Include a name attribute in all form elements (i.e. <input>, <select>, and <textarea>) to receive the submission data. -->
+
+                  <!-- input name -->
+                  <div class="form-input-group">
+                    <label class="form-input-label" for="name">Your name</label>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="name"
+                      required
+                    />
+                  </div>
+
+                  <!-- input email -->
+                  <div class="form-input-group">
+                    <label class="form-input-label" for="email"
                       >Your email address</label
                     >
-                    <div class="fcf-input-group">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="fcf-form-control"
-                        required
-                      />
-                    </div>
+                    <input
+                      class="form-input"
+                      type="email"
+                      name="email"
+                      required
+                    />
                   </div>
 
-                  <div class="fcf-form-group">
-                    <label for="message" class="fcf-label">Your message</label>
-                    <div class="fcf-input-group">
-                      <textarea
-                        id="message"
-                        name="message"
-                        class="fcf-form-control"
-                        rows="6"
-                        maxlength="3000"
-                        required
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <div class="fcf-form-group">
-                    <button
-                      type="submit"
-                      id="fcf-button"
-                      class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block"
+                  <!-- input message -->
+                  <div class="form-input-group">
+                    <label class="form-input-label" for="message"
+                      >Your message</label
                     >
-                      Send Message
-                    </button>
+                    <textarea
+                      class="form-input"
+                      name="message"
+                      rows="6"
+                      maxlength="3000"
+                      required
+                    ></textarea>
                   </div>
+
+                  <!-- ? Submit the form once. This first-time-use will trigger an email requesting confirmation. Note enter the correct client email. You can also get a random-like string to replace your naked email address in the action attribute of your form. Your email address will remain unknown to spam-bots and human visitors. This random string will send to you when you confirm your email address. -->
+                  <!-- submit button -->
+                  <div class="form-input-group">
+                    <label class="form-input-label" for="submit" hidden
+                      >button</label
+                    >
+                    <button class="form-input" name="button" type="submit"
+                      >Send  Message</button
+                    >
+                  </div>
+
                 </form>
               </div>
             </div>
