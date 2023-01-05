@@ -491,12 +491,9 @@ main > .main-wrapper > .about > .profile-photo > img {
 }
 
 /* about user description ifo */
-main > .main-wrapper > .about > .body * {
-  text-align: left;
-}
-
 main > .main-wrapper > .about > .body > p {
   padding-bottom: 0.5rem;
+  text-align: left;
 }
 
 /* about contact me button */
